@@ -10,20 +10,14 @@
         body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; line-height: 1.6; color: #333; }
         .navbar { background-color: var(--primary-color); }
         .content-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-top: 30px; }
-        .equation-box { background: #eef2f7; padding: 25px; border-radius: 8px; border-left: 5px solid var(--primary-color); }
-        
-        /* Estilo de Libro Diario para Casos */
+        .equation-box { background: #eef2f7; padding: 25px; border-radius: 8px; border-left: 5px solid var(--primary-color); height: 100%; }
         .diario-table { font-family: 'Segoe UI', sans-serif; font-size: 0.95rem; }
         .diario-table thead { background-color: var(--primary-color); color: white; }
         .bg-saldo { background-color: #f8f9fa; font-weight: bold; border-top: 2px solid #dee2e6 !important; }
         .text-debe { color: #28a745; font-weight: 500; }
         .text-haber { color: #dc3545; font-weight: 500; }
-        
-        /* Flujo de Información */
-        .flow-step { border: 1px solid #dee2e6; padding: 15px; border-radius: 8px; background: #fff; height: 100%; }
-        .flow-arrow { font-size: 1.5rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; }
-
         h2, h3 { color: var(--primary-color); margin-top: 35px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .book-badge { background-color: var(--primary-color); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; margin-right: 10px; }
         @media print { .no-print { display: none !important; } }
     </style>
 </head>
@@ -43,117 +37,53 @@
     <main class="container">
         <div class="content-card mb-5">
             <h1 class="display-5 fw-bold">Unidad 1: La Información Contable en la Organización</h1>
-            <p class="lead text-muted">La contabilidad como activo estratégico y fuente estructurada de datos.</p>
+            <p class="lead text-muted">De la disciplina técnica al activo estratégico de datos.</p>
             <hr>
 
-            <h2>1. La Contabilidad como Sistema de Información (SIC)</h2>
-            <p>Un sistema de información contable recopila, procesa y distribuye datos económicos para apoyar la toma de decisiones. Se compone de cuatro etapas fundamentales:</p>
-            
-            <div class="row text-center g-3 align-items-center mb-4">
-                <div class="col-md-2">
-                    <div class="flow-step shadow-sm">
-                        <h6 class="fw-bold">Datos</h6>
-                        <small>Ventas, compras, inversiones.</small>
-                    </div>
+            <h2>1. Definición de Contabilidad</h2>
+            <p>La contabilidad es una disciplina técnica que forma parte del sistema de información de la organización. Su función principal es recopilar, clasificar y registrar hechos económicos de manera sistemática para producir informes que faciliten la toma de decisiones y el control interno y externo.</p>
+
+            <h2>2. Registros Obligatorios: Libros Contables</h2>
+            <p>Para garantizar la integridad y legalidad de la información, se utilizan registros estructurados:</p>
+            <div class="list-group mb-4">
+                <div class="list-group-item">
+                    <span class="book-badge">Libro Diario</span>
+                    <strong>Registro cronológico:</strong> Se anotan todas las operaciones día a día mediante "asientos". Es la base del sistema.
                 </div>
-                <div class="col-md-1 flow-arrow">→</div>
-                <div class="col-md-3">
-                    <div class="flow-step shadow-sm">
-                        <h6 class="fw-bold">Procesamiento</h6>
-                        <small>Aplicación de normas y criterios contables.</small>
-                    </div>
+                <div class="list-group-item">
+                    <span class="book-badge">Libro Mayor</span>
+                    <strong>Clasificación por cuentas:</strong> Permite conocer el saldo de cada concepto (ej. cuánto dinero hay en Caja o cuánto se debe a Proveedores).
                 </div>
-                <div class="col-md-1 flow-arrow">→</div>
-                <div class="col-md-2">
-                    <div class="flow-step shadow-sm">
-                        <h6 class="fw-bold">Almacenamiento</h6>
-                        <small>Bases de datos o sistemas de gestión.</small>
-                    </div>
-                </div>
-                <div class="col-md-1 flow-arrow">→</div>
-                <div class="col-md-2">
-                    <div class="flow-step shadow-sm">
-                        <h6 class="fw-bold">Salida</h6>
-                        <small>Balances y flujos de efectivo.</small>
-                    </div>
+                <div class="list-group-item">
+                    <span class="book-badge">Inventarios y Balances</span>
+                    <strong>Estado de situación:</strong> Refleja el detalle de activos, pasivos y el patrimonio neto al inicio y cierre de cada ejercicio.
                 </div>
             </div>
-
-            <h2>2. Estructura Patrimonial</h2>
-            <p>Representa los recursos de la empresa y cómo se financian.</p>
-            <div class="row mt-4 g-4">
-                <div class="col-md-4">
-                    <div class="p-4 border-top border-4 border-primary bg-light rounded h-100 shadow-sm">
-                        <h5 class="fw-bold text-primary">Activo</h5>
-                        <p class="small">Bienes y derechos: efectivo, inventarios, maquinaria y equipos informáticos (Bienes de Uso).</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 border-top border-4 border-secondary bg-light rounded h-100 shadow-sm">
-                        <h5 class="fw-bold text-secondary">Pasivo</h5>
-                        <p class="small">Obligaciones con terceros: préstamos, deudas con proveedores y compromisos fiscales.</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="p-4 border-top border-4 border-dark bg-light rounded h-100 shadow-sm">
-                        <h5 class="fw-bold text-dark">Patrimonio Neto</h5>
-                        <p class="small">Recursos propios: aportes de socios (Capital) y utilidades reinvertidas.</p>
-                    </div>
-                </div>
-            </div>
-
-            <h2>3. Ecuación Fundamental y Modelos de Financiamiento</h2>
-            <p>La relación entre los elementos se expresa mediante dos perspectivas:</p>
             
-            <div class="row mb-4">
+
+            <h2>3. La Ecuación Fundamental: Dos Miradas</h2>
+            <p>Todo recurso en la organización tiene un origen. Esta relación de equilibrio se analiza desde dos perspectivas clave:</p>
+            
+            <div class="row g-4 mb-4">
                 <div class="col-md-6">
-                    <div class="equation-box text-center">
-                        <small class="text-muted">Visión de Inversión (Origen y Aplicación)</small><br>
-                        <span class="h4">Activo = Pasivo + PN</span>
+                    <div class="equation-box">
+                        <h5 class="fw-bold text-primary">A. Mirada de Inversión</h5>
+                        <p class="h3 my-3">Activo = Pasivo + PN</p>
+                        <p class="small">Responde a: <strong>¿En qué invirtió la empresa y cómo lo financió?</strong> El Activo muestra la aplicación de fondos, mientras que el Pasivo y PN muestran el origen (ajeno o propio).</p>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="equation-box text-center" style="border-left-color: var(--secondary-color);">
-                        <small class="text-muted">Visión de Propiedad (Valor Real)</small><br>
-                        <span class="h4">Activo - Pasivo = PN</span>
+                    <div class="equation-box" style="border-left-color: var(--secondary-color);">
+                        <h5 class="fw-bold text-secondary">B. Mirada de Valor Real</h5>
+                        <p class="h3 my-3">Activo - Pasivo = PN</p>
+                        <p class="small">Responde a: <strong>¿Cuál es la riqueza neta de los dueños?</strong> Al restar todas las deudas del total de bienes, obtenemos el valor real o "valor libro" de la propiedad societaria.</p>
                     </div>
                 </div>
             </div>
 
-            <h5>Modelos de Financiamiento</h5>
-            <ul>
-                <li><strong>Capital Propio:</strong> Fondos provenientes de los dueños y la propia operación del negocio.</li>
-                <li><strong>Deuda:</strong> Financiamiento externo que genera una obligación futura y costo financiero.</li>
-                <li><strong>Mixto:</strong> Estrategia que equilibra ambos para optimizar el crecimiento.</li>
-            </ul>
-
-            <h2 class="mt-5">4. Casos Prácticos: Aplicación de Debe, Haber y Saldo</h2>
-            <p>A continuación, se presentan dos situaciones para visualizar el impacto de las cuentas en el patrimonio neto.</p>
+            <h2>4. Caso Práctico Inicial: Determinación de Saldo</h2>
+            <p>Aplicación de la mecánica de <strong>Debe</strong> y <strong>Haber</strong> para establecer el Patrimonio Neto inicial.</p>
             
-            <h5 class="fw-bold mb-3">Caso 1: Situación Personal</h5>
-            <div class="table-responsive mb-5">
-                <table class="table table-hover diario-table border">
-                    <thead>
-                        <tr>
-                            <th>Concepto / Cuenta</th>
-                            <th class="text-end">DEBE (Activos)</th>
-                            <th class="text-end">HABER (Pasivos)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Auto (Bien de Uso)</td><td class="text-end text-debe">$12.000.000</td><td class="text-end">-</td></tr>
-                        <tr><td>Sueldo en cuenta bancaria</td><td class="text-end text-debe">$2.000.000</td><td class="text-end">-</td></tr>
-                        <tr><td>Préstamo prendario auto</td><td class="text-end">-</td><td class="text-end text-haber">$2.000.000</td></tr>
-                        <tr><td>Cuotas Facultad pendientes</td><td class="text-end">-</td><td class="text-end text-haber">$1.000.000</td></tr>
-                        <tr class="bg-saldo">
-                            <td>PATRIMONIO NETO (SALDO)</td>
-                            <td colspan="2" class="text-end text-primary h5">$11.000.000</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h5 class="fw-bold mb-3">Caso 2: Una Librería (Negocio)</h5>
             <div class="table-responsive">
                 <table class="table table-hover diario-table border">
                     <thead>
@@ -164,17 +94,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>Local Comercial (Inmueble)</td><td class="text-end text-debe">$40.000.000</td><td class="text-end">-</td></tr>
-                        <tr><td>Stock de Mercadería</td><td class="text-end text-debe">$8.000.000</td><td class="text-end">-</td></tr>
-                        <tr><td>Deuda con Editoriales</td><td class="text-end">-</td><td class="text-end text-haber">$4.000.000</td></tr>
-                        <tr><td>Impuestos por pagar</td><td class="text-end">-</td><td class="text-end text-haber">$1.000.000</td></tr>
+                        <tr><td>Efectivo (Caja)</td><td class="text-end text-debe">$500.000</td><td class="text-end">-</td></tr>
+                        <tr><td>Servidores y PCs (Bienes de Uso)</td><td class="text-end text-debe">$2.500.000</td><td class="text-end">-</td></tr>
+                        <tr><td>Préstamo Bancario (Deuda)</td><td class="text-end">-</td><td class="text-end text-haber">$1.200.000</td></tr>
                         <tr class="bg-saldo">
-                            <td>VALOR NETO DEL NEGOCIO (SALDO)</td>
-                            <td colspan="2" class="text-end text-primary h5">$43.000.000</td>
+                            <td>PATRIMONIO NETO (SALDO)</td>
+                            <td colspan="2" class="text-end text-primary h5">$1.800.000</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
+            <p class="mt-3 small text-muted"><em>Análisis: La inversión total (Activo) es de $3.000.000, financiada en un 40% por terceros y un 60% por capital propio.</em></p>
 
         </div>
     </main>
