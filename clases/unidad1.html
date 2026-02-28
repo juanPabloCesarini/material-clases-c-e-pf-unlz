@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1 - La Información Contable</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root { --primary-color: #1a3a5a; --secondary-color: #0056b3; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; line-height: 1.6; color: #333; }
+        .navbar { background-color: var(--primary-color); }
+        .content-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-top: 30px; }
+        .equation-box { background: #eef2f7; padding: 25px; border-radius: 8px; border-left: 5px solid var(--primary-color); }
+        
+        /* Estilo de Libro Diario para Casos */
+        .diario-table { font-family: 'Segoe UI', sans-serif; font-size: 0.95rem; }
+        .diario-table thead { background-color: var(--primary-color); color: white; }
+        .bg-saldo { background-color: #f8f9fa; font-weight: bold; border-top: 2px solid #dee2e6 !important; }
+        .text-debe { color: #28a745; font-weight: 500; }
+        .text-haber { color: #dc3545; font-weight: 500; }
+        
+        /* Flujo de Información */
+        .flow-step { border: 1px solid #dee2e6; padding: 15px; border-radius: 8px; background: #fff; height: 100%; }
+        .flow-arrow { font-size: 1.5rem; color: var(--primary-color); display: flex; align-items: center; justify-content: center; }
+
+        h2, h3 { color: var(--primary-color); margin-top: 35px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        @media print { .no-print { display: none !important; } }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top no-print">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">UNLZ | Gestión de la Información</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="../index.html">Cronograma</a>
+                <a class="nav-link" href="../glosario.html">Glosario</a>
+                <button class="btn btn-outline-light ms-3 btn-sm" onclick="window.print()">Imprimir PDF</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="content-card mb-5">
+            <h1 class="display-5 fw-bold">Unidad 1: La Información Contable en la Organización</h1>
+            <p class="lead text-muted">La contabilidad como activo estratégico y fuente estructurada de datos.</p>
+            <hr>
+
+            <h2>1. La Contabilidad como Sistema de Información (SIC)</h2>
+            <p>Un sistema de información contable recopila, procesa y distribuye datos económicos para apoyar la toma de decisiones. Se compone de cuatro etapas fundamentales:</p>
+            
+            <div class="row text-center g-3 align-items-center mb-4">
+                <div class="col-md-2">
+                    <div class="flow-step shadow-sm">
+                        <h6 class="fw-bold">Datos</h6>
+                        <small>Ventas, compras, inversiones.</small>
+                    </div>
+                </div>
+                <div class="col-md-1 flow-arrow">→</div>
+                <div class="col-md-3">
+                    <div class="flow-step shadow-sm">
+                        <h6 class="fw-bold">Procesamiento</h6>
+                        <small>Aplicación de normas y criterios contables.</small>
+                    </div>
+                </div>
+                <div class="col-md-1 flow-arrow">→</div>
+                <div class="col-md-2">
+                    <div class="flow-step shadow-sm">
+                        <h6 class="fw-bold">Almacenamiento</h6>
+                        <small>Bases de datos o sistemas de gestión.</small>
+                    </div>
+                </div>
+                <div class="col-md-1 flow-arrow">→</div>
+                <div class="col-md-2">
+                    <div class="flow-step shadow-sm">
+                        <h6 class="fw-bold">Salida</h6>
+                        <small>Balances y flujos de efectivo.</small>
+                    </div>
+                </div>
+            </div>
+
+            <h2>2. Estructura Patrimonial</h2>
+            <p>Representa los recursos de la empresa y cómo se financian.</p>
+            <div class="row mt-4 g-4">
+                <div class="col-md-4">
+                    <div class="p-4 border-top border-4 border-primary bg-light rounded h-100 shadow-sm">
+                        <h5 class="fw-bold text-primary">Activo</h5>
+                        <p class="small">Bienes y derechos: efectivo, inventarios, maquinaria y equipos informáticos (Bienes de Uso).</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border-top border-4 border-secondary bg-light rounded h-100 shadow-sm">
+                        <h5 class="fw-bold text-secondary">Pasivo</h5>
+                        <p class="small">Obligaciones con terceros: préstamos, deudas con proveedores y compromisos fiscales.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="p-4 border-top border-4 border-dark bg-light rounded h-100 shadow-sm">
+                        <h5 class="fw-bold text-dark">Patrimonio Neto</h5>
+                        <p class="small">Recursos propios: aportes de socios (Capital) y utilidades reinvertidas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>3. Ecuación Fundamental y Modelos de Financiamiento</h2>
+            <p>La relación entre los elementos se expresa mediante dos perspectivas:</p>
+            
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="equation-box text-center">
+                        <small class="text-muted">Visión de Inversión (Origen y Aplicación)</small><br>
+                        <span class="h4">Activo = Pasivo + PN</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="equation-box text-center" style="border-left-color: var(--secondary-color);">
+                        <small class="text-muted">Visión de Propiedad (Valor Real)</small><br>
+                        <span class="h4">Activo - Pasivo = PN</span>
+                    </div>
+                </div>
+            </div>
+
+            <h5>Modelos de Financiamiento</h5>
+            <ul>
+                <li><strong>Capital Propio:</strong> Fondos provenientes de los dueños y la propia operación del negocio.</li>
+                <li><strong>Deuda:</strong> Financiamiento externo que genera una obligación futura y costo financiero.</li>
+                <li><strong>Mixto:</strong> Estrategia que equilibra ambos para optimizar el crecimiento.</li>
+            </ul>
+
+            <h2 class="mt-5">4. Casos Prácticos: Aplicación de Debe, Haber y Saldo</h2>
+            <p>A continuación, se presentan dos situaciones para visualizar el impacto de las cuentas en el patrimonio neto.</p>
+            
+            <h5 class="fw-bold mb-3">Caso 1: Situación Personal</h5>
+            <div class="table-responsive mb-5">
+                <table class="table table-hover diario-table border">
+                    <thead>
+                        <tr>
+                            <th>Concepto / Cuenta</th>
+                            <th class="text-end">DEBE (Activos)</th>
+                            <th class="text-end">HABER (Pasivos)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Auto (Bien de Uso)</td><td class="text-end text-debe">$12.000.000</td><td class="text-end">-</td></tr>
+                        <tr><td>Sueldo en cuenta bancaria</td><td class="text-end text-debe">$2.000.000</td><td class="text-end">-</td></tr>
+                        <tr><td>Préstamo prendario auto</td><td class="text-end">-</td><td class="text-end text-haber">$2.000.000</td></tr>
+                        <tr><td>Cuotas Facultad pendientes</td><td class="text-end">-</td><td class="text-end text-haber">$1.000.000</td></tr>
+                        <tr class="bg-saldo">
+                            <td>PATRIMONIO NETO (SALDO)</td>
+                            <td colspan="2" class="text-end text-primary h5">$11.000.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h5 class="fw-bold mb-3">Caso 2: Una Librería (Negocio)</h5>
+            <div class="table-responsive">
+                <table class="table table-hover diario-table border">
+                    <thead>
+                        <tr>
+                            <th>Concepto / Cuenta</th>
+                            <th class="text-end">DEBE (Activos)</th>
+                            <th class="text-end">HABER (Pasivos)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Local Comercial (Inmueble)</td><td class="text-end text-debe">$40.000.000</td><td class="text-end">-</td></tr>
+                        <tr><td>Stock de Mercadería</td><td class="text-end text-debe">$8.000.000</td><td class="text-end">-</td></tr>
+                        <tr><td>Deuda con Editoriales</td><td class="text-end">-</td><td class="text-end text-haber">$4.000.000</td></tr>
+                        <tr><td>Impuestos por pagar</td><td class="text-end">-</td><td class="text-end text-haber">$1.000.000</td></tr>
+                        <tr class="bg-saldo">
+                            <td>VALOR NETO DEL NEGOCIO (SALDO)</td>
+                            <td colspan="2" class="text-end text-primary h5">$43.000.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5 no-print text-center">
+        <p class="small mb-0">Lic. en Gestión de la Información | Universidad Nacional de Lomas de Zamora</p>
+    </footer>
+
+</body>
+</html>
