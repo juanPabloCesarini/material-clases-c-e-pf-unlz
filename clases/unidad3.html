@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad 3 - Tablero de Control (Dashboard)</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #1a3a5a;
+        --secondary-color: #0056b3;
+        --formula-bg: #fff9db;
+        --smart-bg: #e7f3ff;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f8f9fa;
+        line-height: 1.6;
+        color: #333;
+      }
+      .navbar {
+        background-color: var(--primary-color);
+      }
+      .content-card {
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin-top: 30px;
+      }
+      h2,
+      h3 {
+        color: var(--primary-color);
+        margin-top: 40px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      .formula-box {
+        background-color: var(--formula-bg);
+        border: 1px solid #ffe066;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+
+      /* Ajuste para SMART vertical */
+      .smart-box {
+        background-color: var(--smart-bg);
+        border-left: 5px solid var(--secondary-color);
+        padding: 20px;
+        margin: 20px 0;
+      }
+      .smart-list {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+      }
+      .smart-list li {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+      }
+      .smart-list li:last-child {
+        margin-bottom: 0;
+      }
+      .smart-letter {
+        font-weight: bold;
+        color: var(--secondary-color);
+        font-size: 1.3rem;
+        display: inline-block;
+        width: 30px;
+      }
+
+      .btn-interpretacion {
+        background-color: var(--secondary-color);
+        border: none;
+        padding: 15px 30px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      .btn-interpretacion:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-2px);
+      }
+      .dashboard-img {
+        border: 4px solid #eee;
+        border-radius: 8px;
+        max-width: 100%;
+        height: auto;
+      }
+      .badge-kpi {
+        background-color: #d63384;
+        font-size: 0.9rem;
+      }
+      @media print {
+        .no-print,
+        .btn-interpretacion {
+          display: none !important;
+        }
+        .collapse {
+          display: block !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top no-print">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html"
+          >UNLZ | Gestión de la Información</a
+        >
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="../index.html">Cronograma</a>
+          <button
+            class="btn btn-outline-light ms-3 btn-sm"
+            onclick="window.print()"
+          >
+            Imprimir PDF
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="content-card mb-5">
+        <h1 class="display-5 fw-bold text-center">
+          Unidad 3: Tablero de Control (Dashboard)
+        </h1>
+        <hr />
+
+        <section>
+          <h2>Introducción al Análisis basado en Indicadores</h2>
+          <p>
+            En la gestión moderna,
+            <strong>"lo que no se mide, no se puede mejorar"</strong>. El
+            análisis financiero tradicional ha evolucionado hacia un modelo
+            dinámico donde los indicadores permiten monitorear la salud de una
+            organización en tiempo real.
+          </p>
+
+          <div class="row g-4 mt-2">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-light">
+                <div class="card-body">
+                  <h5 class="fw-bold">Dato</h5>
+                  <p class="small text-muted">
+                    Un número aislado sin contexto.
+                  </p>
+                  <p class="mb-0">
+                    Ejemplo: Ventas totales = <strong>$10.000.000</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-light">
+                <div class="card-body">
+                  <h5 class="fw-bold">Indicador</h5>
+                  <p class="small text-muted">
+                    Relación entre dos o más datos.
+                  </p>
+                  <p class="mb-0">
+                    Ejemplo: (Ventas Actuales / Presupuesto) =
+                    <strong>1,25</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-light">
+                <div class="card-body">
+                  <h5 class="fw-bold text-primary">KPI</h5>
+                  <p class="small text-muted">
+                    Métrica crítica para la estrategia.
+                  </p>
+                  <p class="mb-0">
+                    Ejemplo: <strong>Margen Neto > 15%</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>El Balanced Scorecard (BSC)</h2>
+          <p>
+            Desarrollado por Kaplan y Norton, propone equilibrar los indicadores
+            financieros con perspectivas de clientes, procesos internos y
+            aprendizaje.
+          </p>
+        </section>
+
+        <section>
+          <h2>Metodología SMART para Objetivos</h2>
+          <p>
+            Para que un tablero sea efectivo, los objetivos deben estar
+            correctamente redactados. Un objetivo mal definido conduce a un KPI
+            inútil.
+          </p>
+
+          <div class="smart-box shadow-sm">
+            <ul class="smart-list">
+              <li><span class="smart-letter">S</span>pecific (Específico)</li>
+              <li><span class="smart-letter">M</span>easurable (Medible)</li>
+              <li><span class="smart-letter">A</span>chievable (Alcanzable)</li>
+              <li><span class="smart-letter">R</span>elevant (Relevante)</li>
+              <li><span class="smart-letter">T</span>ime-bound (Plazo)</li>
+            </ul>
+          </div>
+
+          <p>
+            <strong>Ejemplo de redacción técnica:</strong><br />
+            <span class="text-danger">Inadecuado:</span> "Queremos ganar más
+            dinero este año".<br />
+            <span class="text-success">Correcto (SMART):</span> "Aumentar el
+            <strong>ROE</strong> en un <strong>5%</strong> respecto al ejercicio
+            anterior para el <strong>31 de diciembre de 2026</strong>".
+          </p>
+        </section>
+
+        <section>
+          <h2>Ratios Financieros Clave</h2>
+          <div class="formula-box">
+            <p>
+              <strong>Liquidez Corriente:</strong> Activo Corriente / Pasivo
+              Corriente <br />
+              <small
+                >(Ejemplo: $5.000.000 / $3.500.000 =
+                <strong>1,43</strong>)</small
+              >
+            </p>
+            <p class="mb-0">
+              <strong>ROE (Return on Equity):</strong> Resultado Neto /
+              Patrimonio Neto <br />
+              <small
+                >(Ejemplo: $1.800.000 / $4.000.000 =
+                <strong>45%</strong>)</small
+              >
+            </p>
+          </div>
+          <p>
+            <em>Nota sobre contexto Argentino:</em> En economías inflacionarias,
+            los indicadores deben actualizarse según la
+            <strong>inflación proyectada</strong> para mantener la validez de la
+            toma de decisiones.
+          </p>
+        </section>
+        <section>
+          <h2>Planilla de Cashflow Proyectado (Contexto Inflacionario)</h2>
+          <p>
+            En economías con alta volatilidad, proyectar flujos nominales es
+            insuficiente. El siguiente ejemplo muestra cómo un flujo de fondos
+            positivo puede volverse crítico si los costos se indexan y los
+            ingresos permanecen fijos (ej. contratos sin cláusula de ajuste).
+          </p>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-excel">
+              <thead>
+                <tr class="header-row">
+                  <th>CONCEPTO / PERÍODO</th>
+                  <th class="text-monto">MES 1 (Base)</th>
+                  <th class="text-monto">MES 2 (+5% Inf.)</th>
+                  <th class="text-monto">MES 3 (+5% Inf.)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>(+) Cobranzas (Cuotas Fijas)</strong></td>
+                  <td class="text-monto">$ 2.000.000,00</td>
+                  <td class="text-monto">$ 2.000.000,00</td>
+                  <td class="text-monto">$ 2.000.000,00</td>
+                </tr>
+                <tr class="text-danger">
+                  <td>(-) Egresos Operativos (Indexados)</td>
+                  <td class="text-monto">$ -1.200.000,00</td>
+                  <td class="text-monto">$ -1.260.000,00</td>
+                  <td class="text-monto">$ -1.323.000,00</td>
+                </tr>
+                <tr>
+                  <td>(-) Cargas Sociales e Impuestos</td>
+                  <td class="text-monto">$ -400.000,00</td>
+                  <td class="text-monto">$ -420.000,00</td>
+                  <td class="text-monto">$ -441.000,00</td>
+                </tr>
+                <tr class="total-row">
+                  <td><strong>FLUJO NETO DEL PERÍODO</strong></td>
+                  <td class="text-monto text-success">$ 400.000,00</td>
+                  <td class="text-monto text-primary">$ 320.000,00</td>
+                  <td class="text-monto text-danger">$ 236.000,00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="formula-box" style="border-left: 5px solid #d63384">
+            <strong>Análisis de Sostenibilidad:</strong> Observen cómo en solo
+            60 días, la capacidad de ahorro (Flujo Neto) se redujo un
+            <strong>41%</strong> ($400k a $236k) debido a la erosión del poder
+            adquisitivo de los ingresos frente a costos variables.
+          </div>
+        </section>
+        <div class="text-center mt-5 no-print">
+          <button
+            class="btn btn-primary btn-interpretacion shadow-lg"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseAnalisis"
+            aria-expanded="false"
+          >
+            ANALIZAR CASO PRÁCTICO: ¿CÓMO INTERPRETAR UN DASHBOARD?
+          </button>
+        </div>
+
+        <div class="collapse mt-4" id="collapseAnalisis">
+          <div class="card card-body border-primary shadow-sm">
+            <h3 class="mt-0">Guía de Interpretación: Cuentas a Cobrar</h3>
+            <div class="row">
+              <div class="col-lg-7">
+                <img
+                  src="../assets/img/dashboard.png"
+                  alt="Dashboard Financiero"
+                  class="dashboard-img shadow-sm mb-3"
+                />
+              </div>
+              <div class="col-lg-5">
+                <div class="alert alert-info py-2">
+                  <strong>Paso 1:</strong> Diagnóstico de Liquidez. Mirar las
+                  tarjetas superiores para detectar facturas vencidas.
+                </div>
+                <div class="alert alert-info py-2">
+                  <strong>Paso 2:</strong> Riesgo de Concentración. Analizar el
+                  gráfico de torta: ¿Un solo cliente tiene mucha deuda?
+                </div>
+                <div class="alert alert-info py-2">
+                  <strong>Paso 3:</strong> Tendencia Temporal. Comparar "Paid vs
+                  Unpaid" en los últimos 12 meses.
+                </div>
+                <p class="small p-2 bg-light rounded">
+                  <strong>Conclusión:</strong> Leer un tablero no es ver
+                  gráficos; es identificar desviaciones y decidir acciones
+                  inmediatas sobre el capital de trabajo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 text-center">
+      <p class="small mb-0">
+        Lic. en Gestión de la Información | Universidad Nacional de Lomas de
+        Zamora
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
