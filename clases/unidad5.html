@@ -1,0 +1,1082 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad 5 - Macroeconomía y Análisis de Riesgo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-color: #1a3a5a;
+        --secondary-color: #0056b3;
+        --formula-bg: #fff9db;
+        --highlight-bg: #e7f3ff;
+        --risk-bg: #fdf2f2;
+        --cisne-bg: #343a40;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f8f9fa;
+        line-height: 1.6;
+        color: #333;
+      }
+      .navbar {
+        background-color: var(--primary-color);
+      }
+      .content-card {
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin-top: 30px;
+      }
+      h2,
+      h3 {
+        color: var(--primary-color);
+        margin-top: 40px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
+      .formula-box {
+        background-color: var(--formula-bg);
+        border: 1px solid #ffe066;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+      }
+      .highlight-box {
+        background-color: var(--highlight-bg);
+        border-left: 5px solid var(--secondary-color);
+        padding: 20px;
+        margin: 20px 0;
+      }
+      .cisne-negro-section {
+        background-color: var(--cisne-bg);
+        color: white;
+        padding: 30px;
+        border-radius: 8px;
+        border-left: 10px solid #ffc107;
+      }
+      .table-amortizacion {
+        font-size: 0.85rem;
+      }
+      .btn-analisis {
+        background-color: var(--secondary-color);
+        border: none;
+        padding: 15px 30px;
+        font-weight: bold;
+        transition: 0.3s;
+      }
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        .col-md-6 {
+          width: 50% !important;
+          float: left;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top no-print">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#"
+          >UNLZ | Gestión de la Información</a
+        >
+        <div class="navbar-nav ms-auto">
+          <button class="btn btn-outline-light btn-sm" onclick="window.print()">
+            Imprimir PDF
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <div class="content-card mb-5">
+        <h1 class="display-5 fw-bold text-center">
+          Unidad 5: Macroeconomía y Análisis de Riesgo
+        </h1>
+        <hr />
+
+        <section>
+          <h2>1. El Escenario de Precios y Modelos de Mercado</h2>
+          <p>
+            La estabilidad de precios es el principal termómetro de la salud
+            macroeconómica. Para un gestor, no basta con conocer el índice
+            (IPC); es vital entender su origen para proyectar costos y precios
+            de venta.
+          </p>
+
+          <h3 class="h5 mt-4 fw-bold">Las Tres Miradas sobre la Inflación</h3>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-light shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">Monetarista</h6>
+                  <p class="small">
+                    La inflación es un fenómeno estrictamente monetario. Se
+                    produce cuando la emisión de dinero crece por encima de la
+                    demanda real y la producción de bienes.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-light shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">Estructuralista</h6>
+                  <p class="small">
+                    Surge por "cuellos de botella" en la oferta, falta de
+                    infraestructura o pujas distributivas (salarios vs.
+                    ganancias) que los sectores trasladan a precios.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-light shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">Expectativas (Inercia)</h6>
+                  <p class="small">
+                    Se alimenta de la memoria del pasado. Si los actores creen
+                    que los precios subirán un 50%, actúan hoy remarcando
+                    preventivamente.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4 align-items-center">
+            <div class="col-md-7">
+              <h3 class="h5 fw-bold">
+                Dinámica de Precios según el Grado de Apertura
+              </h3>
+              <p>
+                <strong>Economía Cerrada (Proteccionismo):</strong> Al no
+                existir competencia de productos extranjeros, los productores
+                locales tienen mayor poder de fijación de precios. Cualquier
+                exceso de demanda o suba de costos se traslada íntegramente al
+                consumidor. La inflación tiende a ser más alta y persistente.
+              </p>
+              <p>
+                <strong>Economía Abierta (Libre Comercio):</strong> El precio
+                internacional actúa como un "techo" o ancla. Si el productor
+                local sube sus precios excesivamente, el consumidor opta por el
+                producto importado. Esto fuerza a la empresa nacional a buscar
+                competitividad vía eficiencia y no vía precio.
+              </p>
+            </div>
+            <div class="col-md-5">
+              <div class="card border-info bg-light p-3">
+                <h6 class="fw-bold text-info">Otras patologías de precios:</h6>
+                <ul class="mb-0 small">
+                  <li>
+                    <strong>Deflación:</strong> Caída de precios que frena la
+                    inversión (nadie compra hoy si mañana estará más barato).
+                  </li>
+                  <li>
+                    <strong>Estanflación:</strong> El peor de los mundos. Caída
+                    de la actividad económica con precios en alza.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>2. Los Grandes Agregados Económicos</h2>
+          <p>
+            El PBI (Producto Bruto Interno) mide la riqueza generada por un país
+            en un período determinado. Cada componente de la fórmula representa
+            un segmento del mercado diferente.
+          </p>
+
+          <div class="formula-box text-center shadow-sm">
+            <h4 class="fw-bold mb-0">PBI = C + I + G + (X - M)</h4>
+          </div>
+
+          <div class="row g-4 mt-2">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-white shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary border-bottom pb-2">
+                    C: Consumo Privado
+                  </h6>
+                  <p class="small text-muted">
+                    Es el gasto de las familias en bienes y servicios.
+                    Representa el motor principal de la demanda interna.
+                    <strong>Indicador clave para B2C.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-white shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary border-bottom pb-2">
+                    I: Inversión
+                  </h6>
+                  <p class="small text-muted">
+                    Gasto de las empresas en bienes de capital (maquinaria,
+                    infraestructura, software). Es la apuesta al crecimiento
+                    futuro. <strong>Indicador clave para B2B.</strong>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-white shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary border-bottom pb-2">
+                    G: Gasto Público
+                  </h6>
+                  <p class="small text-muted">
+                    Erogaciones del Estado en sueldos, salud, educación y obra
+                    pública. Su variación define si la política fiscal es
+                    expansiva o contractiva.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 border-0 bg-white shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-success border-bottom pb-2">
+                    X: Exportaciones
+                  </h6>
+                  <p class="small text-muted">
+                    Ventas al resto del mundo. Representan el ingreso genuino de
+                    divisas y la competitividad internacional del país.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 border-0 bg-white shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-danger border-bottom pb-2">
+                    M: Importaciones
+                  </h6>
+                  <p class="small text-muted">
+                    Compras al exterior. Si M es muy alta respecto a X, se
+                    produce un <strong>Déficit Comercial</strong> que presiona
+                    sobre el tipo de cambio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box mt-4">
+            <h5 class="fw-bold">El Factor Distorsivo: La Informalidad</h5>
+            <p class="mb-0 small">
+              La <strong>"Economía en Negro"</strong> subestima el PBI real.
+              Para la gestión, implica competencia desleal (quien no paga cargas
+              sociales tiene costos menores) y una menor base imponible que
+              suele derivar en mayor presión tributaria para las empresas
+              formales.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>3. El Sistema Financiero y Bursátil</h2>
+          <p>
+            El <strong>Mercado de Capitales</strong> permite que el ahorro se
+            transforme en inversión productiva. El Licenciado en Gestión debe
+            conocer los instrumentos para decidir cómo financiar la empresa o
+            dónde colocar excedentes.
+          </p>
+
+          <h3 class="h5 mt-4 fw-bold">Instrumentos de Inversión</h3>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div
+                class="card h-100 border-start border-4 border-primary shadow-sm"
+              >
+                <div class="card-body">
+                  <h6 class="fw-bold">Acciones</h6>
+                  <p class="small text-muted">
+                    Títulos de <strong>Renta Variable</strong>. Representan una
+                    parte del capital social. Sos socio y tu ganancia depende de
+                    los dividendos y la suba de la cotización.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div
+                class="card h-100 border-start border-4 border-info shadow-sm"
+              >
+                <div class="card-body">
+                  <h6 class="fw-bold">Bonos (Obligaciones)</h6>
+                  <p class="small text-muted">
+                    Títulos de <strong>Renta Fija</strong> a mediano/largo
+                    plazo. Sos acreedor. El emisor te devuelve el capital más un
+                    interés (cupón) pactado.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div
+                class="card h-100 border-start border-4 border-secondary shadow-sm"
+              >
+                <div class="card-body">
+                  <h6 class="fw-bold">Letras</h6>
+                  <p class="small text-muted">
+                    Deuda de <strong>Corto Plazo</strong> (menos de un año).
+                    Suelen ser emitidas por el Estado para cubrir baches de caja
+                    inmediatos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="h5 mt-5 fw-bold">Valoración de Títulos: VN vs. VR</h3>
+          <p>
+            Un título de deuda tiene dos precios que conviven simultáneamente:
+          </p>
+          <ul>
+            <li>
+              <strong>Valor Nominal (VN):</strong> Es el valor escrito en el
+              papel. Es lo que el emisor promete pagar al vencimiento.
+            </li>
+            <li>
+              <strong>Valor Real o de Mercado (VR):</strong> Es el precio al que
+              cotiza hoy en la Bolsa según la oferta y la demanda.
+            </li>
+          </ul>
+
+          <div class="table-responsive mt-3">
+            <table class="table table-bordered align-middle">
+              <thead class="table-dark">
+                <tr class="text-center">
+                  <th>Concepto</th>
+                  <th>Relación</th>
+                  <th>Interpretación de Gestión</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fw-bold text-center">A la Par</td>
+                  <td class="text-center">VR = VN</td>
+                  <td>
+                    El mercado confía plenamente en el emisor. El rendimiento es
+                    igual a la tasa pactada.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="fw-bold text-center">Bajo la Par</td>
+                  <td class="text-center text-danger">VR < VN</td>
+                  <td>
+                    <span class="badge bg-danger">Riesgo / Oportunidad</span> El
+                    mercado percibe riesgo de impago o inflación. Es una
+                    oportunidad para el inversor porque compra con descuento.
+                  </td>
+                </tr>
+                <tr>
+                  <td class="fw-bold text-center">Sobre la Par</td>
+                  <td class="text-center text-success">VR > VN</td>
+                  <td>
+                    <span class="badge bg-success">Confianza</span> Alta demanda
+                    o tasas de mercado muy bajas. El título es muy codiciado.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="highlight-box mt-4">
+            <p class="mb-0">
+              <strong>Merval:</strong> Es el índice que mide el desempeño de las
+              empresas líderes en Argentina. Es el "termómetro" bursátil local.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>4. Los Bancos y el Costo del Dinero</h2>
+
+          <h3 class="h5 mt-4 fw-bold">
+            Clasificación de Préstamos según su Destino
+          </h3>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">Personales</h6>
+                  <p class="small text-muted">
+                    Destinados al consumo de bienes de corta duración. Suelen
+                    tener tasas más altas y plazos más cortos. El riesgo para el
+                    banco es mayor al no tener una garantía real específica.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">Hipotecarios</h6>
+                  <p class="small text-muted">
+                    Préstamos a largo plazo garantizados por un inmueble. En
+                    Argentina suelen utilizar el sistema
+                    <strong>UVA</strong> para ajustar el capital por inflación,
+                    manteniendo cuotas iniciales más accesibles.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">
+                    Bienes de Capital (Leasing/Prendarios)
+                  </h6>
+                  <p class="small text-muted">
+                    Financiación para maquinaria, rodados o infraestructura. Son
+                    el motor de la inversión productiva (la "I" del PBI).
+                    Permiten a la empresa producir más antes de terminar de
+                    pagar el activo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box mt-4">
+            <h5 class="fw-bold">
+              Gestión de Excedentes y Financiamiento Corriente
+            </h5>
+            <div class="row">
+              <div class="col-md-6">
+                <p class="small mb-1">
+                  <strong>Inversión (Liquidez):</strong> Plazo Fijo Común (tasa
+                  fija), Plazo Fijo UVA (protección inflación) y FCI Money
+                  Market (intereses diarios con rescate inmediato).
+                </p>
+              </div>
+              <div class="col-md-6">
+                <p class="small mb-1">
+                  <strong>Financiamiento (Caja):</strong> Adelanto en cuenta
+                  corriente (para urgencias de 24/48hs) y Descuento de Cheques
+                  (liquidez mediante ventas a plazo).
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="h5 mt-5 fw-bold text-center">
+            Simulación de Sistemas de Amortización (Desglose 12 Meses)
+          </h3>
+          <p class="text-center small text-muted">
+            Caso: Préstamo de $100.000 | TNA: 25% | Tasa Mensual: 2,083%
+          </p>
+
+          <div class="row g-2">
+            <div class="col-md-6">
+              <div class="card border-primary">
+                <div
+                  class="card-header bg-primary text-white text-center fw-bold small"
+                >
+                  SISTEMA FRANCÉS (Cuota Fija)
+                </div>
+                <div class="table-responsive">
+                  <table
+                    class="table table-sm table-amortizacion mb-0 table-hover"
+                  >
+                    <thead class="table-light">
+                      <tr class="text-center">
+                        <th>Mes</th>
+                        <th>Cuota</th>
+                        <th>Interés</th>
+                        <th>Amortiz.</th>
+                        <th>Saldo</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-end">
+                      <tr>
+                        <td class="text-center">0</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100.000,00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">1</td>
+                        <td>9.504,45</td>
+                        <td>2.083,33</td>
+                        <td>7.421,12</td>
+                        <td>92.578,88</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">2</td>
+                        <td>9.504,45</td>
+                        <td>1.928,73</td>
+                        <td>7.575,72</td>
+                        <td>85.003,16</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">3</td>
+                        <td>9.504,45</td>
+                        <td>1.770,90</td>
+                        <td>7.733,55</td>
+                        <td>77.269,61</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">4</td>
+                        <td>9.504,45</td>
+                        <td>1.609,78</td>
+                        <td>7.894,67</td>
+                        <td>69.374,94</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">5</td>
+                        <td>9.504,45</td>
+                        <td>1.445,31</td>
+                        <td>8.059,14</td>
+                        <td>61.315,80</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">6</td>
+                        <td>9.504,45</td>
+                        <td>1.277,41</td>
+                        <td>8.227,04</td>
+                        <td>53.088,76</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">7</td>
+                        <td>9.504,45</td>
+                        <td>1.106,02</td>
+                        <td>8.398,43</td>
+                        <td>44.690,33</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">8</td>
+                        <td>9.504,45</td>
+                        <td>931,05</td>
+                        <td>8.573,40</td>
+                        <td>36.116,93</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">9</td>
+                        <td>9.504,45</td>
+                        <td>752,44</td>
+                        <td>8.752,01</td>
+                        <td>27.364,92</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">10</td>
+                        <td>9.504,45</td>
+                        <td>570,10</td>
+                        <td>8.934,35</td>
+                        <td>18.430,57</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">11</td>
+                        <td>9.504,45</td>
+                        <td>383,97</td>
+                        <td>9.120,48</td>
+                        <td>9.310,09</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">12</td>
+                        <td>9.504,45</td>
+                        <td>193,96</td>
+                        <td>9.310,49</td>
+                        <td>0,00</td>
+                      </tr>
+                      <tr class="table-primary fw-bold">
+                        <td>TOTAL</td>
+                        <td>114.053,40</td>
+                        <td>14.053,40</td>
+                        <td>100.000,00</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card border-success">
+                <div
+                  class="card-header bg-success text-white text-center fw-bold small"
+                >
+                  SISTEMA ALEMÁN (Amortización Fija)
+                </div>
+                <div class="table-responsive">
+                  <table
+                    class="table table-sm table-amortizacion mb-0 table-hover"
+                  >
+                    <thead class="table-light">
+                      <tr class="text-center">
+                        <th>Mes</th>
+                        <th>Cuota</th>
+                        <th>Interés</th>
+                        <th>Amortiz.</th>
+                        <th>Saldo</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-end">
+                      <tr>
+                        <td class="text-center">0</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>100.000,00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">1</td>
+                        <td>10.416,67</td>
+                        <td>2.083,33</td>
+                        <td>8.333,33</td>
+                        <td>91.666,67</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">2</td>
+                        <td>10.243,06</td>
+                        <td>1.909,72</td>
+                        <td>8.333,33</td>
+                        <td>83.333,33</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">3</td>
+                        <td>10.069,44</td>
+                        <td>1.736,11</td>
+                        <td>8.333,33</td>
+                        <td>75.000,00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">4</td>
+                        <td>9.895,83</td>
+                        <td>1.562,50</td>
+                        <td>8.333,33</td>
+                        <td>66.666,67</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">5</td>
+                        <td>9.722,22</td>
+                        <td>1.388,89</td>
+                        <td>8.333,33</td>
+                        <td>58.333,33</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">6</td>
+                        <td>9.548,61</td>
+                        <td>1.215,28</td>
+                        <td>8.333,33</td>
+                        <td>50.000,00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">7</td>
+                        <td>9.375,00</td>
+                        <td>1.041,67</td>
+                        <td>8.333,33</td>
+                        <td>41.666,67</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">8</td>
+                        <td>9.201,39</td>
+                        <td>868,06</td>
+                        <td>8.333,33</td>
+                        <td>33.333,33</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">9</td>
+                        <td>9.027,78</td>
+                        <td>694,44</td>
+                        <td>8.333,33</td>
+                        <td>25.000,00</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">10</td>
+                        <td>8.854,17</td>
+                        <td>520,83</td>
+                        <td>8.333,33</td>
+                        <td>16.666,67</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">11</td>
+                        <td>8.680,56</td>
+                        <td>347,22</td>
+                        <td>8.333,33</td>
+                        <td>8.333,33</td>
+                      </tr>
+                      <tr>
+                        <td class="text-center">12</td>
+                        <td>8.506,94</td>
+                        <td>173,61</td>
+                        <td>8.333,33</td>
+                        <td>0,00</td>
+                      </tr>
+                      <tr class="table-success fw-bold">
+                        <td>TOTAL</td>
+                        <td>113.541,67</td>
+                        <td>13.541,67</td>
+                        <td>100.000,00</td>
+                        <td>-</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>5. Integración Global y Bloques Económicos</h2>
+          <p>
+            En la economía moderna, los países no compiten de forma aislada,
+            sino que se integran para potenciar su competitividad sistémica.
+            Para un gestor, los bloques definen el tamaño del mercado "local" y
+            las reglas de origen.
+          </p>
+
+          <h3 class="h5 mt-4 fw-bold">Principales Bloques Económicos</h3>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-light shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">MERCOSUR</h6>
+                  <p class="small">
+                    <strong>Integrantes:</strong> Argentina, Brasil, Paraguay y
+                    Uruguay. Busca la libre circulación de bienes y servicios.
+                    Es nuestra plataforma inmediata para ganar escala de
+                    producción.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-light shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">Unión Europea (UE)</h6>
+                  <p class="small">
+                    El proceso más avanzado de integración. Mercado único,
+                    moneda común (Euro) y libre movimiento de trabajadores.
+                    Elimina el riesgo cambiario dentro del bloque.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card h-100 border-0 bg-light shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">USMCA (Ex NAFTA)</h6>
+                  <p class="small">
+                    Tratado entre EE.UU., México y Canadá. Muy fuerte en reglas
+                    de origen (automotriz) y protección de propiedad intelectual
+                    y comercio digital.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-5">
+            <div class="col-md-12">
+              <h3 class="h5 fw-bold text-success">
+                Ventajas de la Integración para la Gestión
+              </h3>
+              <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                  <thead class="table-success">
+                    <tr>
+                      <th>Ventaja</th>
+                      <th>Impacto en la Empresa</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Economías de Escala</strong></td>
+                      <td>
+                        Acceso a mercados de millones de personas, permitiendo
+                        diluir costos fijos en mayores volúmenes de producción.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Reducción de Costos</strong></td>
+                      <td>
+                        Eliminación de aranceles (impuestos de
+                        importación/exportación) y simplificación de trámites
+                        aduaneros.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Seguridad Jurídica</strong></td>
+                      <td>
+                        Los tratados internacionales protegen las inversiones de
+                        cambios arbitrarios en las leyes locales.
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><strong>Estandarización</strong></td>
+                      <td>
+                        Normas de calidad y técnicas comunes que facilitan el
+                        desarrollo de productos compatibles para todo el bloque.
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mt-5">
+          <h4
+            class="text-center mb-4 fw-bold text-uppercase"
+            style="letter-spacing: 2px"
+          >
+            <i class="bi bi-graph-up-arrow"></i> Mística de Gestión: Impacto
+            Macroeconómico
+          </h4>
+
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div
+                class="card h-100 shadow-sm border-0"
+                style="border-top: 5px solid var(--primary-color) !important"
+              >
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary text-white p-2 rounded-circle me-3">
+                      <small class="fw-bold">IT</small>
+                    </div>
+                    <h5 class="card-title mb-0 fw-bold">
+                      Caso A: Software Factory
+                    </h5>
+                  </div>
+
+                  <div
+                    class="p-3 mb-3 rounded"
+                    style="
+                      background-color: #e8f5e9;
+                      border-left: 4px solid #2e7d32;
+                    "
+                  >
+                    <h6 class="fw-bold text-success small">
+                      ESCENARIO: SUPERÁVIT FISCAL
+                    </h6>
+                    <p class="small mb-0">
+                      Genera estabilidad y baja el Riesgo País. La empresa
+                      accede a <strong>crédito al 15%</strong> para compra de
+                      servidores y expansión de infraestructura. El crecimiento
+                      se acelera.
+                    </p>
+                  </div>
+
+                  <div
+                    class="p-3 rounded"
+                    style="
+                      background-color: #ffebee;
+                      border-left: 4px solid #c62828;
+                    "
+                  >
+                    <h6 class="fw-bold text-danger small">
+                      ESCENARIO: DÉFICIT FISCAL
+                    </h6>
+                    <p class="small mb-0">
+                      La tasa de interés <strong>sube al 70%</strong>. El costo
+                      financiero se vuelve prohibitivo y la inversión en capital
+                      se frena por completo.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div
+                class="card h-100 shadow-sm border-0"
+                style="border-top: 5px solid var(--secondary-color) !important"
+              >
+                <div class="card-body">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="bg-primary text-white p-2 rounded-circle me-3">
+                      <small class="fw-bold">IND</small>
+                    </div>
+                    <h5 class="card-title mb-0 fw-bold">
+                      Caso B: Sector Industrial
+                    </h5>
+                  </div>
+
+                  <div
+                    class="p-3 mb-3 rounded"
+                    style="
+                      background-color: #e8f5e9;
+                      border-left: 4px solid #2e7d32;
+                    "
+                  >
+                    <h6 class="fw-bold text-success small">
+                      ESCENARIO: SUPERÁVIT COMERCIAL
+                    </h6>
+                    <p class="small mb-0">
+                      Abundancia de divisas en el mercado. El gestor logra
+                      <strong>importar kits de producción</strong> y materia
+                      prima sin demoras ni trabas burocráticas.
+                    </p>
+                  </div>
+
+                  <div
+                    class="p-3 rounded"
+                    style="
+                      background-color: #ffebee;
+                      border-left: 4px solid #c62828;
+                    "
+                  >
+                    <h6 class="fw-bold text-danger small">
+                      ESCENARIO: DÉFICIT COMERCIAL
+                    </h6>
+                    <p class="small mb-0">
+                      El Estado restringe importaciones para cuidar dólares. El
+                      costo del insumo sube por escasez y se produce la
+                      <strong>parada de planta</strong>.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-info mt-4 border-0 shadow-sm">
+            <p class="mb-0 small text-center">
+              <strong>Conclusión de Gestión:</strong> El Licenciado no controla
+              la macro, pero debe prever estos giros para decidir si es momento
+              de <strong>endeudarse para crecer</strong> o
+              <strong>acumular stock</strong> para sobrevivir.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>7. Análisis de Riesgo: El Tablero de Control</h2>
+          <p>
+            Para el Licenciado en Gestión, el riesgo macroeconómico no se puede
+            eliminar, pero sí se puede **gestionar**. Un tablero de control
+            efectivo debe monitorear tres frentes críticos que afectan la
+            viabilidad del negocio:
+          </p>
+
+          <div class="row g-4 mt-2">
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm bg-light">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">
+                    <i class="bi bi-shop"></i> Frente de Mercado (Precios)
+                  </h6>
+                  <p class="small">
+                    Monitoreo de la <strong>Inflación Núcleo (Core)</strong>. Si
+                    los precios suben por encima de los salarios, el consumo (C)
+                    caerá. <br /><br /><strong>Acción de Gestión:</strong>
+                    Ajustar políticas de precios y plazos de cobranza para
+                    evitar la licuación del capital de trabajo.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm bg-light">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">
+                    <i class="bi bi-currency-exchange"></i> Frente Externo
+                    (Divisas)
+                  </h6>
+                  <p class="small">
+                    Seguimiento de la <strong>Brecha Cambiaria</strong> y las
+                    Reservas del Banco Central. Una brecha alta anticipa
+                    devaluaciones o mayores restricciones a la importación (M).
+                    <br /><br /><strong>Acción de Gestión:</strong> Cobertura en
+                    activos dolarizados o adelanto de compras de insumos
+                    críticos (stockeo).
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card h-100 border-0 shadow-sm bg-light">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">
+                    <i class="bi bi-bank"></i> Frente Financiero (Tasas)
+                  </h6>
+                  <p class="small">
+                    Análisis del <strong>Riesgo País</strong> y la Tasa de
+                    Política Monetaria. Define el costo de oportunidad de la
+                    inversión (I). <br /><br /><strong
+                      >Acción de Gestión:</strong
+                    >
+                    Evaluar si conviene el Sistema Alemán (para pagar menos
+                    intereses total) o Francés (para licuar cuotas si hay
+                    inflación).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="formula-box mt-4 border-primary bg-white">
+            <h5 class="fw-bold text-center">La Regla de Oro del Gestor</h5>
+            <p class="text-center mb-0">
+              <strong
+                >Vigilancia Estratégica = Anticipación + Resiliencia</strong
+              >
+            </p>
+            <p class="small text-muted text-center mt-2">
+              "No miramos el PBI para saber qué pasó, sino para entender qué
+              decisiones de financiamiento e inversión tomar hoy para seguir
+              operando mañana."
+            </p>
+          </div>
+        </section>
+        <section class="cisne-negro-section mt-5">
+          <h2 class="text-warning border-0 mt-0">
+            8. El Cisne Negro: La Pandemia y la Reconversión
+          </h2>
+          <p>
+            Evento disruptivo de impacto global que obligó a una adaptación
+            acelerada. El gran hito fue la
+            <strong>reconversión de la industria textil</strong>.
+          </p>
+          <div class="row">
+            <div class="col-md-6">
+              <p class="small">
+                <strong>Hito de Gestión:</strong> Ante el freno del consumo de
+                indumentaria, el sector se volcó masivamente a la producción de
+                barbijos y kits sanitarios, garantizando supervivencia y
+                soberanía productiva.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <p class="small">
+                <strong>Antifragilidad:</strong> No es solo resistir, es
+                aprender del caos. La flexibilidad de las líneas de producción
+                permitió transformar una amenaza existencial en una oportunidad
+                de servicio esencial.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 text-center">
+      <p class="small mb-0">
+        Lic. en Gestión de la Información | Universidad Nacional de Lomas de
+        Zamora
+      </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
