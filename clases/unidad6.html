@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unidad 6 - Presupuesto y Control de Gestión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-color: #1a3a5a;
+        --secondary-color: #0056b3;
+        --formula-bg: #fff9db;
+        --highlight-bg: #e7f3ff;
+      }
+      body { font-family: "Segoe UI", sans-serif; background-color: #f8f9fa; color: #333; }
+      .navbar { background-color: var(--primary-color); }
+      .content-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); margin-top: 30px; }
+      h2, h3 { color: var(--primary-color); margin-top: 40px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+      .formula-box { background-color: var(--formula-bg); border: 1px solid #ffe066; padding: 20px; border-radius: 8px; margin: 20px 0; }
+      
+      /* Estilos específicos para las 3 columnas de escenarios */
+      .card-escenario { height: 100%; font-size: 0.85rem; border-top: 5px solid; }
+      .opt { border-color: #2e7d32; }
+      .base { border-color: var(--secondary-color); }
+      .pes { border-color: #c62828; }
+      .table-header-custom { background-color: #444; color: white; }
+      
+      @media print { .no-print { display: none !important; } }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top no-print">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">UNLZ | Gestión de la Información</a>
+      </div>
+    </nav>
+
+    <main class="container mb-5">
+      <div class="content-card">
+        <h1 class="display-5 fw-bold text-center">Unidad 6: Presupuesto y Control</h1>
+        <p class="text-center text-muted">Planificación Financiera y Creación de Valor</p>
+        <hr />
+
+        <section>
+          <h2>1. El Cimiento Estratégico: La Cadena de Valor de Porter</h2>
+          <p>Para presupuestar con precisión, primero debemos "mapear" la organización. Michael Porter propone que cada actividad de la empresa debe agregar valor al cliente final.</p>
+          <div class="text-center my-4">
+            <img src="../assets/img/cadena-de-valor.png" class="img-fluid rounded shadow-sm" alt="Cadena de Valor">
+          </div>
+        </section>
+
+        <section>
+          <h2>2. El Presupuesto y el Tiempo</h2>
+          <p>El <strong>Diagrama de Gantt</strong> es nuestra herramienta de presupuesto de tiempos. Un desvío aquí impacta directamente en los costos salariales.</p>
+          <div class="text-center my-4">
+            <img src="../assets/img/gantt.webp" class="img-fluid rounded shadow-sm" alt="Gantt">
+          </div>
+        </section>
+
+        <section>
+          <h2>3. Caso Práctico: Análisis Multiescenario</h2>
+          <p class="mb-4 text-muted">A continuación, comparamos los tres escenarios posibles para el proyecto Fintech:</p>
+          
+          <div class="row g-3">
+            <div class="col-lg-4">
+              <div class="card card-escenario opt shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-success text-center">ESCENARIO A: OPTIMISTA</h6>
+                  <table class="table table-hover mt-3">
+                    <thead class="small table-dark">
+                      <tr><th>Rubro</th><th>USD</th></tr>
+                    </thead>
+                    <tbody class="small">
+                      <tr><td>Ingresos</td><td>14.000</td></tr>
+                      <tr><td>Salarios (Op.)</td><td>4.800</td></tr>
+                      <tr><td>Licencias (Ap.)</td><td>350</td></tr>
+                      <tr><td>Mkt y Ventas</td><td>250</td></tr>
+                      <tr><td>CapEx</td><td>2.500</td></tr>
+                      <tr class="table-success fw-bold text-dark"><td>MARGEN NETO</td><td>6.100</td></tr>
+                    </tbody>
+                  </table>
+                  <p class="extra-small text-muted" style="font-size: 0.75rem;">Obs: Entrega anticipada y descuentos por pago anual.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card card-escenario base shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary text-center">ESCENARIO B: BASE</h6>
+                  <table class="table table-hover mt-3">
+                    <thead class="small table-dark">
+                      <tr><th>Rubro</th><th>USD</th></tr>
+                    </thead>
+                    <tbody class="small">
+                      <tr><td>Ingresos</td><td>12.000</td></tr>
+                      <tr><td>Salarios (Op.)</td><td>6.100</td></tr>
+                      <tr><td>Licencias (Ap.)</td><td>400</td></tr>
+                      <tr><td>Mkt y Ventas</td><td>450</td></tr>
+                      <tr><td>CapEx</td><td>2.500</td></tr>
+                      <tr class="table-primary fw-bold text-dark"><td>MARGEN NETO</td><td>2.550</td></tr>
+                    </tbody>
+                  </table>
+                  <p class="extra-small text-muted" style="font-size: 0.75rem;">Obs: Cumplimiento estándar del plan de trabajo.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-4">
+              <div class="card card-escenario pes shadow-sm">
+                <div class="card-body">
+                  <h6 class="fw-bold text-danger text-center">ESCENARIO C: PESIMISTA</h6>
+                  <table class="table table-hover mt-3">
+                    <thead class="small table-dark">
+                      <tr><th>Rubro</th><th>USD</th></tr>
+                    </thead>
+                    <tbody class="small">
+                      <tr><td>Ingresos</td><td>10.500</td></tr>
+                      <tr><td>Salarios (Op.)</td><td>7.500</td></tr>
+                      <tr><td>Licencias (Ap.)</td><td>600</td></tr>
+                      <tr><td>Mkt y Ventas</td><td>600</td></tr>
+                      <tr><td>CapEx</td><td>2.800</td></tr>
+                      <tr class="table-danger fw-bold text-dark"><td>MARGEN NETO</td><td>-1.000</td></tr>
+                    </tbody>
+                  </table>
+                  <p class="extra-small text-muted" style="font-size: 0.75rem;">Obs: Penalidades por demora y suba de costos Cloud.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+       <section>
+          <h2>4. Control de Gestión y Análisis de Desvíos</h2>
+          <p>Una vez que el proyecto inicia, el presupuesto se convierte en una herramienta de control activa. No buscamos "culpables", sino información estratégica para la toma de decisiones.</p>
+          
+          <div class="formula-box text-center shadow-sm">
+            <h4 class="fw-bold mb-0">Desvío = Presupuestado - Real</h4>
+            <div class="mt-2 small">
+              <span class="badge bg-success">Resultado Positivo: Ahorro (Favorable)</span>
+              <span class="badge bg-danger">Resultado Negativo: Exceso (Desfavorable)</span>
+            </div>
+          </div>
+
+          <div class="row g-4 mt-2">
+            <div class="col-md-6">
+              <div class="card h-100 border-0 bg-light">
+                <div class="card-body">
+                  <h6 class="fw-bold"><i class="bi bi-search"></i> Tipos de Desvíos</h6>
+                  <ul class="small mb-0">
+                    <li><strong>Desvío en Precio:</strong> El costo por hora de un dev o una licencia aumentó por condiciones de mercado.</li>
+                    <li><strong>Desvío en Eficiencia:</strong> El equipo utilizó 150 horas para una tarea que el Gantt estimaba en 100 horas.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card h-100 border-0 bg-light">
+                <div class="card-body">
+                  <h6 class="fw-bold text-primary">Interpretación Analítica</h6>
+                  <p class="small mb-0">Un desvío negativo recurrente en <strong>Operaciones</strong> puede indicar que la <strong>Cadena de Valor</strong> está mal calculada o que el <strong>Gantt</strong> fue demasiado ambicioso. El control nos permite ajustar el rumbo antes de que el margen desaparezca.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="alert alert-info mt-4 small">
+            <strong>Conclusión:</strong> Si detectamos una pérdida operativa (como en el Escenario Pesimista), el CFO debe decidir si el proyecto se sigue financiando con reservas o si se deben renegociar hitos con el cliente.
+          </div>
+        </section>
+      </div>
+    </main>
+     <footer class="bg-dark text-white py-4 text-center">
+      <p class="small mb-0">
+        Lic. en Gestión de la Información | Universidad Nacional de Lomas de
+        Zamora
+      </p>
+    </footer>
+  </body>
+</html>
