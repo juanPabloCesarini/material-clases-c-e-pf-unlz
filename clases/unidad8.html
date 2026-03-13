@@ -1,136 +1,184 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Unidad 8: Evaluación de Proyectos de Inversión - UNLZ</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
     <style>
-        :root {
-            --primary-color: #1a3a5a;
-            --secondary-color: #28a745; /* Verde para inversión/proyectos */
-            --accent-color: #e67e22;
-            --formula-bg: #f8f9fa;
-        }
-        body { font-family: "Segoe UI", sans-serif; background-color: #f4f7f6; color: #333; }
-        
-        .navbar { background-color: var(--primary-color); }
-        .hero-section { background: white; padding: 40px 0; border-bottom: 1px solid #dee2e6; }
-        
-        .content-card { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); }
-        h2 { color: var(--primary-color); margin-top: 40px; border-bottom: 2px solid #eee; padding-bottom: 10px; font-weight: bold; }
-        h3 { color: var(--secondary-color); margin-top: 30px; font-size: 1.3rem; font-weight: 600; }
-        
-        .formula-box { background-color: var(--formula-bg); border-left: 5px solid var(--primary-color); padding: 20px; border-radius: 4px; margin: 20px 0; font-family: 'Times New Roman', Times, serif; font-style: italic; font-size: 1.2rem; }
-        
-        .ciclo-paso { border: 1px solid #ddd; padding: 15px; border-radius: 8px; text-align: center; background: #fff; transition: 0.3s; }
-        .ciclo-paso:hover { border-color: var(--secondary-color); background: #f0fff4; }
-        
-        .badge-decision { font-size: 1rem; padding: 8px 15px; }
-        @media print { .no-print { display: none !important; } }
+      :root {
+        --primary-color: #1a3a5a;
+        --secondary-color: #28a745;
+        --accent-color: #e67e22;
+        --formula-bg: #f8f9fa;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f4f7f6;
+        color: #333;
+      }
+      .navbar { background-color: var(--primary-color); }
+      .content-card {
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+      h2 {
+        color: var(--primary-color);
+        margin-top: 40px;
+        border-bottom: 2px solid #eee;
+        padding-bottom: 10px;
+        font-weight: bold;
+      }
+      h3 {
+        color: var(--secondary-color);
+        margin-top: 30px;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+      .paso-box {
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        background: #fff;
+        height: 100%;
+      }
+      .formula-box {
+        background-color: var(--formula-bg);
+        border-left: 5px solid var(--primary-color);
+        padding: 20px;
+        border-radius: 4px;
+        margin: 20px 0;
+        font-family: "Times New Roman", Times, serif;
+      }
+      .alert-it { background-color: #e7f3ff; border-left: 5px solid #0d6efd; }
+      .sunk-cost-box {
+        background-color: #fff5f5;
+        border: 1px solid #feb2b2;
+        padding: 15px;
+        border-radius: 8px;
+      }
+      @media print { .no-print { display: none !important; } }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top no-print">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="../index.html">UNLZ | Gestión de la Información</a>
-            <div class="navbar-nav ms-auto">
-                <a class="nav-link" href="../index.html">Cronograma</a>
-                <button class="btn btn-outline-light ms-3 btn-sm" onclick="window.print()">Generar Material PDF</button>
-            </div>
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="./index.html">UNLZ | Gestión de la Información</a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="./index.html">Cronograma</a>
+          <button class="btn btn-outline-light ms-3 btn-sm" onclick="window.print()">Generar Material PDF</button>
         </div>
+      </div>
     </nav>
 
-    <header class="hero-section text-center">
-        <div class="container">
-            <span class="badge bg-secondary mb-2">Administración Financiera</span>
-            <h1 class="fw-bold display-5">Unidad 8: Evaluación de Proyectos de Inversión</h1>
-            <p class="lead text-muted">Cátedra: Prof. Juan Pablo Cesarini</p>
-        </div>
-    </header>
-
     <main class="container my-5">
-        <div class="content-card">
-            
-            <section id="definicion">
-                <h2>1. Naturaleza de los Proyectos</h2>
-                <p>Un proyecto es una <strong>solución inteligente</strong> al planteo de un problema. En términos financieros, es la asignación de recursos en el presente (C<sub>0</sub>) con la expectativa de obtener beneficios en el futuro (F<sub>n</sub>).</p>
-                
-                <div class="row g-3 mt-3">
-                    <div class="col-md-4">
-                        <div class="ciclo-paso"><strong>Perspectiva Empresarial</strong><br><small>Rentabilidad y Riesgo</small></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="ciclo-paso"><strong>Perspectiva Social</strong><br><small>Bienestar de la Comunidad</small></div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="ciclo-paso"><strong>Base Caja</strong><br><small>Flujos de Dinero Reales</small></div>
-                    </div>
-                </div>
-            </section>
+      <div class="content-card">
+        <h1 class="display-5 fw-bold">
+          <span class="badge rounded-pill text-bg-info">Unidad 8</span>
+          Evaluación de Proyectos de Inversión
+        </h1>
+        <p class="lead text-secondary">Cátedra: Prof. Juan Pablo Cesarini</p>
+        <hr />
 
-            <section id="indicadores" class="mt-5">
-                <h2>2. Criterios de Decisión: VAN y TIR</h2>
-                
-                <h3>Valor Actual Neto (VAN)</h3>
-                <p>Mide la creación de riqueza absoluta del proyecto expresada en moneda de hoy.</p>
-                <div class="formula-box text-center">
-                    VAN = -I<sub>0</sub> + &sum; [F<sub>n</sub> / (1 + i)<sup>n</sup>] + [VR / (1 + i)<sup>n</sup>]
-                </div>
-                <div class="d-flex justify-content-center gap-2 mb-4">
-                    <span class="badge bg-success badge-decision">VAN > 0: Aceptar</span>
-                    <span class="badge bg-warning text-dark badge-decision">VAN = 0: Indiferente</span>
-                    <span class="badge bg-danger badge-decision">VAN < 0: Rechazar</span>
-                </div>
+        <section id="maduracion">
+          <h2>1. Ciclo de Vida: El Proceso de Maduración</h2>
+          <p>La evaluación es un proceso iterativo de reducción de incertidumbre:</p>
+          <div class="row g-4 mt-2">
+            <div class="col-md-3"><div class="paso-box"><h5 class="fw-bold text-primary">Idea</h5><p class="small">Identificación de la necesidad.</p></div></div>
+            <div class="col-md-3"><div class="paso-box"><h5 class="fw-bold text-primary">Perfil</h5><p class="small">Información secundaria. Estimaciones gruesas.</p></div></div>
+            <div class="col-md-3"><div class="paso-box"><h5 class="fw-bold text-primary">Prefactibilidad</h5><p class="small">Análisis de alternativas y mercado.</p></div></div>
+            <div class="col-md-3"><div class="paso-box"><h5 class="fw-bold text-primary">Factibilidad</h5><p class="small">Información primaria. Decisión final.</p></div></div>
+          </div>
+        </section>
 
-                <h3>Tasa Interna de Retorno (TIR)</h3>
-                <p>Es la tasa que iguala el VAN a cero. Representa la rentabilidad intrínseca del proyecto.</p>
-                <div class="alert alert-warning border-0 shadow-sm">
-                    <strong>⚠️ Limitación Crítica:</strong> La TIR puede presentar inconsistencias (raíces múltiples) ante flujos con cambios de signo o cuando la inversión inicial es nula (Apalancamiento 100%).
-                </div>
-            </section>
+        <section id="flujo" class="mt-5">
+          <h2>2. Construcción del Flujo de Fondos Incremental</h2>
+          <p>Se basa en el principio de <strong>Base Caja</strong> e ingresos/egresos <strong>incrementales</strong>.</p>
+          
+          <div class="sunk-cost-box mb-4">
+            <h6 class="fw-bold text-danger"><i class="bi bi-exclamation-triangle"></i> Definición de Costos Hundidos (Sunk Costs):</h6>
+            <p class="small mb-0">Son gastos realizados en el pasado que <strong>no pueden recuperarse</strong> independientemente de si el proyecto se acepta o se rechaza. 
+            <br><strong>Ejemplo:</strong> Un estudio de mercado de $50.000 pagado el mes pasado. Al evaluar el proyecto hoy, ese dinero ya se fue; incluirlo sesgaría la decisión sobre los flujos futuros.</p>
+          </div>
 
-            <section id="sensibilidad" class="mt-5">
-                <h2>3. Análisis de Sensibilidad e Incertidumbre</h2>
-                <p>Dado que los flujos futuros no son ciertos, "estresamos" el modelo modificando variables críticas para observar su robustez.</p>
-                
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <div class="p-3 bg-light rounded border-start border-4 border-primary">
-                            <h5 class="fw-bold">Bajo Riesgo</h5>
-                            <p class="small mb-0">Se conocen las probabilidades de ocurrencia (Prima de riesgo, Markowitz).</p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="p-3 bg-light rounded border-start border-4 border-accent">
-                            <h5 class="fw-bold">Bajo Incertidumbre</h5>
-                            <p class="small mb-0">No hay datos estadísticos. Se recurre a Simulación y Árboles de Decisión.</p>
-                        </div>
-                    </div>
-                </div>
+          <div class="row mt-4">
+            <div class="col-md-6">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Inversión Inicial:</strong> Activos y Capital de Trabajo.</li>
+                <li class="list-group-item"><strong>Flujos Operativos:</strong> Ingresos y costos de explotación.</li>
+                <li class="list-group-item"><strong>Amortizaciones:</strong> No son salida de caja, pero generan ahorro impositivo.</li>
+              </ul>
+            </div>
+            <div class="col-md-6">
+              <div class="alert alert-it p-3">
+                <h6 class="fw-bold">Regla de Oro:</h6>
+                <p class="small mb-0">"Solo importan los flujos que cambian si el proyecto se realiza". Los costos hundidos se ignoran; los costos de oportunidad se incluyen.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                <h3 class="mt-4">Impacto del Financiamiento (Apalancamiento)</h3>
-                <p>El uso de deuda externa puede mejorar sustancialmente el VAN, siempre que el costo del préstamo (K<sub>d</sub> post-tax) sea inferior a la tasa de retorno del proyecto.</p>
-            </section>
+        <section id="criterios" class="mt-5">
+          <h2>3. Criterios de Evaluación</h2>
+          
+          <h3>Valor Actual Neto (VAN)</h3>
+          <div class="formula-box text-center" style="font-size: 1.3rem;">
+            VAN = -I<sub>0</sub> + &sum; [ F<sub>n</sub> / (1 + i)<sup>n</sup> ] + [ VR / (1 + i)<sup>n</sup> ]
+          </div>
 
-            <section id="resumen-factory" class="mt-5 p-4 rounded" style="background-color: #e9ecef;">
-                <h4 class="fw-bold"><i class="bi bi-graph-up-arrow"></i> Caso Software Factory: Lecciones Aprendidas</h4>
-                <p>A través de la simulación de escenarios (100% Deuda vs. 50/50 vs. 100% Propio), se demuestra que:</p>
-                <ul class="mb-0">
-                    <li>La <strong>Estructura de Capital Óptima</strong> maximiza el VAN mediante el Escudo Fiscal.</li>
-                    <li>La <strong>TIR</strong> por sí sola puede ser engañosa en proyectos altamente apalancados.</li>
-                    <li>El <strong>Valor Residual (Fondo de Comercio)</strong> es determinante en la viabilidad de empresas IT.</li>
-                </ul>
-            </section>
+          <h3>Tasa Interna de Retorno (TIR)</h3>
+          <p>Es la tasa de interés (r) que hace que el VAN sea exactamente igual a cero.</p>
+          <div class="formula-box text-center" style="font-size: 1.3rem;">
+            0 = -I<sub>0</sub> + &sum; [ F<sub>n</sub> / (1 + TIR)<sup>n</sup> ] + [ VR / (1 + TIR)<sup>n</sup> ]
+          </div>
+          
+          
 
-        </div>
+          <div class="row g-4 mt-2">
+            <div class="col-md-6">
+              <h5 class="fw-bold">TIR Incremental</h5>
+              <p class="small">Necesaria para elegir entre proyectos <strong>excluyentes</strong> de distinta escala.</p>
+            </div>
+            <div class="col-md-6">
+              <h5 class="fw-bold">TIR Ampliada</h5>
+              <p class="small">Resuelve el problema de las <strong>raíces múltiples</strong> ante flujos no convencionales.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="riesgo" class="mt-5">
+          <h2>4. Riesgo e Incertidumbre</h2>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="p-3 border rounded shadow-sm h-100">
+                <h5 class="fw-bold">Bajo Riesgo</h5>
+                <p class="small">Probabilidades conocidas. Se aplica <strong>Markowitz</strong> y ajuste de tasa (Prima de Riesgo).</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="p-3 border rounded shadow-sm h-100">
+                <h5 class="fw-bold">Bajo Incertidumbre</h5>
+                <p class="small">Sin estadística. Herramientas: <strong>Simulación</strong>, <strong>Árboles</strong> y <strong>Sensibilidad</strong>.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="apalancamiento" class="mt-5">
+          <h2>5. Impacto del Financiamiento</h2>
+          <p>El <strong>Apalancamiento</strong> ocurre cuando el rendimiento del activo es superior al costo de la deuda, maximizando el valor para el inversor.</p>
+          <div class="alert alert-warning border-0 shadow-sm text-center">
+            <strong>Escudo Fiscal:</strong> Las amortizaciones y los intereses de deuda reducen la base imponible del impuesto a las ganancias.
+          </div>
+        </section>
+
+      </div>
     </main>
 
-    <footer class="bg-dark text-white py-4 no-print text-center">
-        <p class="small mb-1">Lic. en Gestión de la Información - Matemática Financiera</p>
-        <p class="small opacity-50">Universidad Nacional de Lomas de Zamora</p>
+    <footer class="bg-dark text-white py-4 text-center">
+      <p class="small mb-0">Lic. en Gestión de la Información | Universidad Nacional de Lomas de Zamora</p>
     </footer>
-
-</body>
+  </body>
 </html>

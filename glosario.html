@@ -1,48 +1,226 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Glosario de Términos - Gestión de la Información</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Glosario - Gestión de la Información - UNLZ</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
     <style>
-      :root { --primary-color: #1a3a5a; }
-      body { font-family: "Segoe UI", sans-serif; background-color: #f8f9fa; padding: 20px; }
-      .glosario-card { background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); padding: 30px; }
-      .term-row { border-bottom: 1px solid #eee; padding: 15px 0; }
-      .term-name { font-weight: bold; color: var(--primary-color); width: 180px; display: inline-block; }
-      .unit-badge { font-size: 0.7rem; background: #6c757d; color: white; padding: 2px 6px; border-radius: 4px; margin-right: 10px; }
+      :root {
+        --primary-color: #1a3a5a;
+        --secondary-color: #28a745;
+        --accent-color: #e67e22;
+        --u2-color: #0d6efd;
+        --u3-color: #6610f2;
+        --u5-color: #198754;
+        --u6-color: #fd7e14;
+        --u7-color: #dc3545;
+        --u8-color: #20c997;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f4f7f6;
+        color: #333;
+      }
+
+      /* Estilos Navbar de Unidad 8 */
+      .navbar {
+        background-color: var(--primary-color);
+      }
+
+      /* Estilo Content Card de Unidad 8 */
+      .content-card {
+        background: white;
+        padding: 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      /* Alineación de filas del glosario */
+      .term-row {
+        display: flex;
+        align-items: flex-start;
+        border-bottom: 1px solid #eee;
+        padding: 20px 0;
+      }
+      .term-row:last-child {
+        border-bottom: none;
+      }
+
+      .term-header {
+        display: flex;
+        align-items: center;
+        min-width: 280px;
+        padding-right: 20px;
+      }
+
+      .term-name {
+        font-weight: bold;
+        color: var(--primary-color);
+        margin-bottom: 0;
+      }
+
+      .term-definition {
+        flex: 1;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* Estilo de Badges de Unidad */
+      .unit-badge {
+        font-size: 0.75rem;
+        font-weight: bold;
+        color: white;
+        padding: 4px 0;
+        border-radius: 6px;
+        margin-right: 15px;
+        width: 40px;
+        text-align: center;
+        flex-shrink: 0;
+      }
+
+      .bg-u2 { background-color: var(--u2-color); }
+      .bg-u3 { background-color: var(--u3-color); }
+      .bg-u5 { background-color: var(--u5-color); }
+      .bg-u6 { background-color: var(--u6-color); }
+      .bg-u7 { background-color: var(--u7-color); }
+      .bg-u8 { background-color: var(--u8-color); }
+
+      .amort-list { font-size: 0.85rem; margin-top: 8px; color: #555; padding-left: 20px; }
+      .formula-text { font-family: monospace; background: #f1f1f1; padding: 2px 5px; border-radius: 4px; }
+      .costo-alerta { font-size: 0.85rem; color: #856404; background-color: #fff3cd; padding: 10px; border-radius: 6px; margin-top: 10px; border: 1px solid #ffeeba; }
+
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="glosario-card">
-        <h1 class="display-6 fw-bold text-center mb-4">Glosario Financiero y Operativo</h1>
-        
-        <div class="term-row">
-          <span class="unit-badge">U6</span><span class="term-name">CapEx</span>
-          <p class="d-inline small"><em>Capital Expenditure.</em> Inversión en activos de larga duración que forman parte del patrimonio (hardware, licencias perpetuas).</p>
-        </div>
-
-        <div class="term-row">
-          <span class="unit-badge">U6</span><span class="term-name">Desvío</span>
-          <p class="d-inline small">Diferencia entre el valor real ejecutado y el valor proyectado originalmente en el presupuesto.</p>
-        </div>
-
-        <div class="term-row">
-          <span class="unit-badge">U6</span><span class="term-name">OpEx</span>
-          <p class="d-inline small"><em>Operational Expenditure.</em> Gastos recurrentes necesarios para mantener la operación diaria del negocio (sueldos, servicios, alquileres).</p>
-        </div>
-
-        <div class="term-row">
-          <span class="unit-badge">U5</span><span class="term-name">PBI</span>
-          <p class="d-inline small">Producto Bruto Interno. Indicador que mide el valor monetario de la producción de bienes y servicios de demanda final de un país.</p>
-        </div>
-        
-        <div class="text-center mt-4 no-print">
-            <a href="javascript:history.back()" class="btn btn-sm btn-outline-secondary">Volver a la unidad</a>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top no-print">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="./index.html">UNLZ | Gestión de la Información</a>
+        <div class="navbar-nav ms-auto">
+          <a class="nav-link" href="./index.html">Cronograma</a>
+          <button class="btn btn-outline-light ms-3 btn-sm" onclick="window.print()">
+            Generar Material PDF
+          </button>
         </div>
       </div>
-    </div>
+    </nav>
+
+    <main class="container my-5">
+      <div class="content-card">
+        <h1 class="display-5 fw-bold">
+          <span class="badge rounded-pill text-bg-info">Glosario</span>
+        </h1>
+        <p class="lead text-secondary">Cátedra: Prof. Juan Pablo Cesarini</p>
+
+        <hr />
+
+        <div class="term-row">
+          <div class="term-header">
+            <span class="unit-badge bg-u2">U2</span>
+            <p class="term-name">RT9 - FACPCE</p>
+          </div>
+          <div class="term-definition">
+            Norma técnica que establece las pautas para la presentación de Estados Contables. Define cómo deben exponerse el Activo, Pasivo, Patrimonio Neto y los Resultados.
+          </div>
+        </div>
+
+        <div class="term-row">
+          <div class="term-header">
+            <span class="unit-badge bg-u2">U2</span>
+            <p class="term-name">Amortizaciones</p>
+          </div>
+          <div class="term-definition">
+            Distribución del costo de un bien de uso a lo largo de su vida útil:
+            <ul class="amort-list">
+              <li><strong>Inmuebles:</strong> 50 años (2% anual).</li>
+              <li><strong>Muebles / Maquinarias:</strong> 10 años (10% anual).</li>
+              <li><strong>Rodados / Notebooks:</strong> 5 años (20% anual).</li>
+              <li><strong>Software:</strong> Generalmente 3 años.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="term-row">
+          <div class="term-header">
+            <span class="unit-badge bg-u3">U3</span>
+            <p class="term-name">Ratio vs. Indicador</p>
+          </div>
+          <div class="term-definition">
+            Un <strong>Ratio</strong> es un cociente aritmético entre dos magnitudes contables. Un <strong>Indicador (KPI)</strong> es una métrica estratégica que evalúa el éxito respecto a un objetivo.
+          </div>
+        </div>
+
+        <div class="term-row">
+          <div class="term-header">
+            <span class="unit-badge bg-u3">U3</span>
+            <p class="term-name">ROI (Cálculo)</p>
+          </div>
+          <div class="term-definition">
+            <em>Return on Investment.</em> Mide el rendimiento financiero neto. <br>
+            <span class="formula-text">ROI = (Ganancia - Inversión) / Inversión</span>
+          </div>
+        </div>
+
+        <div class="term-row">
+          <div class="term-header">
+            <span class="unit-badge bg-u7">U7</span>
+            <p class="term-name">Beta (β) - CAPM</p>
+          </div>
+          <div class="term-definition">
+            Mide el riesgo sistemático de un activo respecto al mercado.
+            <ul class="amort-list">
+              <li><strong>β > 1:</strong> Activo agresivo/volátil (Software).</li>
+              <li><strong>β < 1:</strong> Activo defensivo/estable (Servicios).</li>
+            </ul>
+            <div class="costo-alerta">
+              <strong>Nota sobre la obtención:</strong> El dato es gratuito en fuentes académicas (Damodaran). Reportes de terminales como Bloomberg o Reuters tienen costo corporativo.
+            </div>
+          </div>
+        </div>
+
+        <div class="term-row">
+          <div class="term-header">
+            <span class="unit-badge bg-u8">U8</span>
+            <p class="term-name">Enfoque de Markowitz</p>
+          </div>
+          <div class="term-definition">
+            Modelo de selección de carteras que busca maximizar el rendimiento esperado para un nivel de riesgo determinado, o minimizar el riesgo para un rendimiento esperado, basándose en la diversificación y la correlación entre activos.
+          </div>
+        </div>
+
+        <div class="term-row">
+          <div class="term-header">
+            <span class="unit-badge bg-u8">U8</span>
+            <p class="term-name">Simulación</p>
+          </div>
+          <div class="term-definition">
+            Técnica que utiliza modelos matemáticos (como Monte Carlo) para replicar el comportamiento de un proyecto ante múltiples variables aleatorias. Permite observar el rango de posibles resultados del VAN y la TIR bajo escenarios de incertidumbre.
+          </div>
+        </div>
+
+        <div class="term-row">
+          <div class="term-header">
+            <span class="unit-badge bg-u8">U8</span>
+            <p class="term-name">Árbol de Decisión</p>
+          </div>
+          <div class="term-definition">
+            Herramienta gráfica que representa una secuencia de decisiones y sus posibles consecuencias (probabilidades y resultados financieros). Es útil para visualizar proyectos con decisiones etapas (ej: expandir o cerrar una planta).
+          </div>
+        </div>
+
+      
+      </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 text-center">
+      <p class="small mb-0">
+        Lic. en Gestión de la Información | Universidad Nacional de Lomas de Zamora
+      </p>
+    </footer>
   </body>
 </html>
